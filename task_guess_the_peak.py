@@ -9,3 +9,15 @@
 #
 # Input: [0, 2, 4, 6, 3, 1]
 # Output: 6
+def peak_value(arr):
+    l, r = 0, len(arr) - 1
+    while l < r:
+        mid = l + (r - l) // 2
+        if arr[mid] < arr[mid + 1]:
+            l = mid + 1
+        else:
+            r = mid
+    return arr[l]
+
+print(peak_value([1, 3, 7, 12, 9, 5, 2]))
+print(peak_value([0, 2, 4, 6, 3, 1]))
